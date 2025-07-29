@@ -141,6 +141,11 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+-- Set conceallevel
+vim.o.conceallevel = 2
+
+vim.o.guifont = 'Lilex Nerd Font:h12'
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -715,6 +720,8 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        'marksman',
+        'prettier',
         'stylua', -- Used to format Lua code
         'ruff',
         'rust-analyzer',
